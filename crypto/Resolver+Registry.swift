@@ -14,11 +14,14 @@ extension Resolver: ResolverRegistering {
 
         registerCurrencyDependencies()
         registerNetworkDependencies()
+        registerUseCases()
+    }
 
-        register { NumberShortenerUtils() }
-            .scope(.application)
+    static func registerUseCases() {
+        register { NumberShortenerUseCase() }
+            .implements(NumberShortenerUseCaseProtocol.self)
 
-        register { PercentageFormatterUtils() }
-            .scope(.application)
+        register { PercentageFormatterUseCase() }
+            .implements(PercentageFormatterUseCaseProtocol.self)
     }
 }

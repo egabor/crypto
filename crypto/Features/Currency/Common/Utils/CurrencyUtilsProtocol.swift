@@ -8,7 +8,7 @@
 import Foundation
 
 protocol CurrencyUtilsProtocol {
-
+    
     func convertToListItemViewData(_ currency: Currency) -> CurrencyListItemViewData
     func convertToDetailsViewData(_ currency: Currency) -> CurrencyDetailsViewData
 }

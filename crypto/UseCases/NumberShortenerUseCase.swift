@@ -1,5 +1,5 @@
 //
-//  NumberShortenerUtils.swift
+//  NumberShortenerUseCase.swift
 //  crypto
 //
 //  Created by Eszenyi Gábor on 2023. 08. 25..
@@ -7,7 +7,12 @@
 
 import Foundation
 
-class NumberShortenerUtils {
+protocol NumberShortenerUseCaseProtocol {
+    
+    func callAsFunction(_ numberString: String) -> String
+}
+
+class NumberShortenerUseCase: NumberShortenerUseCaseProtocol {
 
     private lazy var numberFormatter: NumberFormatter = {
         let numberFormatter = NumberFormatter()
@@ -41,7 +46,7 @@ class NumberShortenerUtils {
         return formattedString
     }
 
-    func shorten(numberString: String) -> String {
+    func callAsFunction(_ numberString: String) -> String {
         let formattedNumber = preFormat(numberString: numberString)
         var slices = formattedNumber.components(separatedBy: " ")
         let head = slices.removeFirst()

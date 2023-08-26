@@ -10,16 +10,16 @@ import Resolver
 
 class CurrencyUtils: CurrencyUtilsProtocol {
 
-    @Injected private var numberShortener: NumberShortenerUtils
-    @Injected private var percentageFormatter: PercentageFormatterUtils
+    @Injected private var numberShortener: NumberShortenerUseCaseProtocol
+    @Injected private var percentageFormatter: PercentageFormatterUseCaseProtocol
 
     func convertToListItemViewData(_ currency: Currency) -> CurrencyListItemViewData {
         .init(
             id: currency.id,
             symbol: currency.symbol,
             name: currency.name.uppercased(),
-            formattedPriceUsd: numberShortener.shorten(numberString: currency.priceUsd),
-            formattedChangePercent24Hr: percentageFormatter.format(currency.changePercent24Hr),
+            formattedPriceUsd: numberShortener(currency.priceUsd),
+            formattedChangePercent24Hr: percentageFormatter(currency.changePercent24Hr),
             change: getChangeType(for: currency.changePercent24Hr),
             imageUrl: imageUrl(for: currency)
         )
@@ -29,12 +29,12 @@ class CurrencyUtils: CurrencyUtilsProtocol {
         .init(
             id: currency.id,
             title: currency.name.uppercased(),
-            formattedPriceUsd: numberShortener.shorten(numberString: currency.priceUsd),
-            formattedChangePercent24Hr: percentageFormatter.format(currency.changePercent24Hr),
+            formattedPriceUsd: numberShortener(currency.priceUsd),
+            formattedChangePercent24Hr: percentageFormatter(currency.changePercent24Hr),
             change: getChangeType(for: currency.changePercent24Hr),
-            formattedMarketCap: numberShortener.shorten(numberString: currency.marketCapUsd),
-            formatted24hrVolume: numberShortener.shorten(numberString: currency.volumeUsd24Hr),
-            formattedSupply: numberShortener.shorten(numberString: currency.supply),
+            formattedMarketCap: numberShortener(currency.marketCapUsd),
+            formatted24hrVolume: numberShortener(currency.volumeUsd24Hr),
+            formattedSupply: numberShortener(currency.supply),
             imageUrl: imageUrl(for: currency)
         )
     }

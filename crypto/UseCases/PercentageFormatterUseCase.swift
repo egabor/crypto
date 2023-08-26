@@ -1,5 +1,5 @@
 //
-//  PercentageFormatterUtils.swift
+//  PercentageFormatterUseCase.swift
 //  crypto
 //
 //  Created by Eszenyi Gábor on 2023. 08. 25..
@@ -7,7 +7,12 @@
 
 import Foundation
 
-class PercentageFormatterUtils {
+protocol PercentageFormatterUseCaseProtocol {
+    
+    func callAsFunction(_ numberString: String) -> String
+}
+
+class PercentageFormatterUseCase: PercentageFormatterUseCaseProtocol {
 
     private lazy var numberFormatter: NumberFormatter = {
         let numberFormatter = NumberFormatter()
@@ -18,7 +23,7 @@ class PercentageFormatterUtils {
         return numberFormatter
     }()
 
-    func format(_ numberString: String) -> String {
+    func callAsFunction(_ numberString: String) -> String {
         guard let doubleValue = Double(numberString) else { return numberString }
         let numberValue = NSNumber(floatLiteral: doubleValue / 100.0)
         return numberFormatter.string(from: numberValue) ?? numberString
