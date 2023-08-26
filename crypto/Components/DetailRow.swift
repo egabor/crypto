@@ -42,9 +42,3 @@ struct DetailRow: View {
 
     // MARK: - LEVEL 2 Views: Helpers & Other Subcomponents
 }
-
-//struct DetailRow_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DetailRow()
-//    }
-//}

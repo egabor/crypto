@@ -92,9 +92,3 @@ extension CurrencyListScreen {
         }
     }
 }
-
-struct CurrencyListScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        CurrencyListScreen()
-    }
-}

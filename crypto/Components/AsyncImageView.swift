@@ -72,9 +72,3 @@ extension AsyncImageView {
         }
     }
 }
-
-//struct AsyncImageView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AsyncImageView()
-//    }
-//}

@@ -162,11 +162,3 @@ extension CurrencyDetailsScreen {
         }
     }
 }
-
-struct CurrencyDetailsScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        CurrencyDetailsScreen(
-            with: Currency.from(id: "bitcoin", name: "BITCOIN")
-        )
-    }
-}

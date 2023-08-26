@@ -99,9 +99,3 @@ extension CurrencyListItem {
         }
     }
 }
-
-//struct CurrerncyListItem_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CurrerncyListItem()
-//    }
-//}
