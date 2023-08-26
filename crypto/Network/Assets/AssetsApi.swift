@@ -8,15 +8,6 @@
 import Foundation
 import Combine
 
-enum AssetsApiError: Error {
-    case endpointURLNotConfigured
-}
-
-protocol AssetsApiProtocol {
-    func fetchCurrencies() async throws -> DataWrapper<[Currency]>
-    func fetchCurrency(by id: String) async throws -> DataWrapper<Currency>
-}
-
 class AssetsApi: AssetsApiProtocol {
     private let baseURL: URL? = URL(string: "http://api.coincap.io")
 
@@ -38,8 +29,4 @@ class AssetsApi: AssetsApiProtocol {
         let json: (data: Data, response: URLResponse) = try await URLSession.shared.data(from: url)
         return try JSONDecoder().decode(DataWrapper<Currency>.self, from: json.data)
     }
-}
-
-struct DataWrapper<D: Decodable>: Decodable {
-    let data: D
 }
