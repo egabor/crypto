@@ -51,6 +51,8 @@
 		6236E4FB2A9A732700BC7604 /* BodyBoldTextStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6236E4FA2A9A732700BC7604 /* BodyBoldTextStyleModifier.swift */; };
 		6236E5002A9A7F7B00BC7604 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6236E4FF2A9A7F7B00BC7604 /* Strings.swift */; };
 		6236E5012A9A7FF300BC7604 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6236E5032A9A7FF300BC7604 /* Localizable.strings */; };
+		6236E5052A9A856200BC7604 /* NumberShortenerUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6236E5042A9A856200BC7604 /* NumberShortenerUseCaseTests.swift */; };
+		6236E5072A9A8AD300BC7604 /* PercentageFormatterUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6236E5062A9A8AD300BC7604 /* PercentageFormatterUseCaseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,8 @@
 		6236E4FA2A9A732700BC7604 /* BodyBoldTextStyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyBoldTextStyleModifier.swift; sourceTree = "<group>"; };
 		6236E4FF2A9A7F7B00BC7604 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		6236E5022A9A7FF300BC7604 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6236E5042A9A856200BC7604 /* NumberShortenerUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberShortenerUseCaseTests.swift; sourceTree = "<group>"; };
+		6236E5062A9A8AD300BC7604 /* PercentageFormatterUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageFormatterUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				6228C08B2A97761B001BA163 /* cryptoTests.swift */,
+				6236E5042A9A856200BC7604 /* NumberShortenerUseCaseTests.swift */,
+				6236E5062A9A8AD300BC7604 /* PercentageFormatterUseCaseTests.swift */,
 			);
 			path = cryptoTests;
 			sourceTree = "<group>";
@@ -496,7 +502,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6236E5072A9A8AD300BC7604 /* PercentageFormatterUseCaseTests.swift in Sources */,
 				6228C08C2A97761B001BA163 /* cryptoTests.swift in Sources */,
+				6236E5052A9A856200BC7604 /* NumberShortenerUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
