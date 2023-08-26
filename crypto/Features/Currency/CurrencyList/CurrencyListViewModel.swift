@@ -13,24 +13,16 @@ class CurrencyListViewModel: ObservableObject {
 
     @Published var currencyListItems: [CurrencyListItemViewData] = []
     @Published var isLoading: Bool = false
+    @Published var showError: Bool = false
 
     @Injected private var api: AssetsApiProtocol
     @Injected private var currencyUtils: CurrencyUtilsProtocol
     @Injected private var currencyRepository: CurrencyRepositoryProtocol
 
     private var currencyDatasetNotifierCancellable: AnyCancellable?
+
     init() {
-//        if let url = Bundle.main.url(forResource: "currencies_mock", withExtension: "json") {
-//            do {
-//                let jsonData = try Data(contentsOf: url)
-//                let decoder = JSONDecoder()
-//                let mapped = try decoder.decode([Currency].self, from: jsonData)
-//                currencies = process(currencies: mapped)
-//            } catch {
-//                print(error)
-//            }
-//        }
-        getCurrencies()
+        fetchCurrencies()
         currencyDatasetNotifierCancellable = currencyRepository
             .dataSetUpdate
             .receive(on: RunLoop.main)
@@ -41,22 +33,17 @@ class CurrencyListViewModel: ObservableObject {
             }
     }
 
-    private func getCurrencies() {
+    private func fetchCurrencies() {
         Task { @MainActor in
             isLoading = true
             do {
                 let response = try await api.fetchCurrencies()
                 currencyRepository.set(currencies: response.data)
             } catch {
-                print(error)
-                //            shouldShowAlert = true
+                showError = true
             }
             isLoading = false
         }
-    }
-
-    private func process(currencies: [Currency]) -> [CurrencyListItemViewData] {
-        currencies.map { currencyUtils.convertToListItemViewData($0) }
     }
 
     func getNavigationData(for currency: CurrencyListItemViewData) -> Currency {
@@ -65,13 +52,29 @@ class CurrencyListViewModel: ObservableObject {
         }
         return navigationData
     }
+
+    private func process(currencies: [Currency]) -> [CurrencyListItemViewData] {
+        currencies.map { currencyUtils.convertToListItemViewData($0) }
+    }
 }
 
 // MARK: - Localized
 
 extension CurrencyListViewModel {
 
-    var localizedTitle: String {
+    var title: String {
         "COINS"
+    }
+
+    var errorAlertTitle: String {
+        .alertErrorTitle
+    }
+
+    var errorMessage: String {
+        .alertErrorGeneralMessage
+    }
+
+    var errorAlertOkButtonTitle: String {
+        .alertOkButtonTitle
     }
 }

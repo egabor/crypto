@@ -31,6 +31,12 @@ struct CurrencyDetailsScreen: View {
         content
             .hiddenNavigationBar()
             .backgroundGradient()
+            .alert(
+                LocalizedStringKey(viewModel.errorAlertTitle),
+                isPresented: $viewModel.showError,
+                actions: errorAlertActions,
+                message: errorAlertMessage
+            )
     }
 
     var content: some View {
@@ -55,11 +61,11 @@ struct CurrencyDetailsScreen: View {
     var currencyInfoView: some View {
         VStack(spacing: configuration.rowSpacing) {
             DetailRow(
-                title: viewModel.localizedPriceTitle,
+                title: viewModel.priceTitle,
                 value: viewData.formattedPriceUsd
             )
             DetailRow(
-                title: viewModel.localized24hrChangeTitle,
+                title: viewModel.last24hrChangeTitle,
                 value: viewData.formattedChangePercent24Hr,
                 valueCustomColor: color(for: viewData.change)
             )
@@ -67,15 +73,15 @@ struct CurrencyDetailsScreen: View {
             contentDivider
 
             DetailRow(
-                title: viewModel.localizedMarketCapTitle,
+                title: viewModel.marketCapTitle,
                 value: viewData.formattedMarketCap
             )
             DetailRow(
-                title: viewModel.localized24hrVolumeTitle,
+                title: viewModel.last24hrVolumeTitle,
                 value: viewData.formatted24hrVolume
             )
             DetailRow(
-                title: viewModel.localizedSupplyTitle,
+                title: viewModel.supplyTitle,
                 value: viewData.formattedSupply
             )
             Spacer()
@@ -132,6 +138,14 @@ struct CurrencyDetailsScreen: View {
             .frame(height: configuration.dividerHeight)
             .overlay(Color.divider)
             .padding(.vertical)
+    }
+
+    func errorAlertActions() -> some View {
+        Text(LocalizedStringKey(viewModel.errorAlertOkButtonTitle))
+    }
+
+    func errorAlertMessage() -> some View {
+        Text(LocalizedStringKey(viewModel.errorMessage))
     }
 
     func color(for change: CurrencyChangeType) -> Color {

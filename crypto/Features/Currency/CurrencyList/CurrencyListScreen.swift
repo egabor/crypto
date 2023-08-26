@@ -18,6 +18,12 @@ struct CurrencyListScreen: View {
         content
             .padding(.horizontal)
             .backgroundGradient()
+            .alert(
+                LocalizedStringKey(viewModel.errorAlertTitle),
+                isPresented: $viewModel.showError,
+                actions: errorAlertActions,
+                message: errorAlertMessage
+            )
     }
 
     var content: some View {
@@ -30,7 +36,7 @@ struct CurrencyListScreen: View {
     // MARK: - LEVEL 1 Views: Main UI Elements
 
     var title: some View {
-        Text(viewModel.localizedTitle)
+        Text(LocalizedStringKey(viewModel.title))
             .headlineTextStyle()
     }
 
@@ -78,6 +84,14 @@ struct CurrencyListScreen: View {
 
     func rowContent(for viewData: CurrencyListItemViewData) -> some View {
         CurrencyListItem(viewData: viewData)
+    }
+
+    func errorAlertActions() -> some View {
+        Text(LocalizedStringKey(viewModel.errorAlertOkButtonTitle))
+    }
+
+    func errorAlertMessage() -> some View {
+        Text(LocalizedStringKey(viewModel.errorMessage))
     }
 }
 

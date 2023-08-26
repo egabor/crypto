@@ -30,7 +30,7 @@ struct DetailRow: View {
     // MARK: - LEVEL 1 Views: Main UI Elements
 
     var titleText: some View {
-        Text(title)
+        Text(LocalizedStringKey(title))
             .bodyTextStyle()
     }
 

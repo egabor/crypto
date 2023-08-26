@@ -42,7 +42,7 @@ class CurrencyUtils: CurrencyUtilsProtocol {
 
 extension CurrencyUtils {
 
-    fileprivate func getChangeType(for change: String) -> CurrencyChangeType {
+    private func getChangeType(for change: String) -> CurrencyChangeType {
         guard let changeValue = Double(change) else { return .none }
         if changeValue < 0.0 {
             return .negative
@@ -52,7 +52,7 @@ extension CurrencyUtils {
         return .none
     }
 
-    fileprivate func imageUrl(for currency: Currency) -> URL? {
+    private func imageUrl(for currency: Currency) -> URL? {
         let symbol = currency.symbol.lowercased()
         return URL(string: Configuration.urlString(for: symbol))
     }

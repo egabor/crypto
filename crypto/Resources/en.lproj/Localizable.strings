@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  crypto
+
+  Created by Eszenyi Gábor on 2023. 08. 26..
+  
+*/
+
+"alert.error.title" = "Error";
+"alert.error.general.message" = "Something went wrong.";
+"alert.ok.button.title" = "Ok";

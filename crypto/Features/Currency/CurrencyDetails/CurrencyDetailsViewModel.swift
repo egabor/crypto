@@ -12,12 +12,13 @@ class CurrencyDetailsViewModel: ObservableObject {
 
     @Published var viewData: CurrencyDetailsViewData = .empty
     @Published var isLoading: Bool = false
-
-    private var currency: Currency
+    @Published var showError: Bool = false
 
     @Injected private var api: AssetsApiProtocol
     @Injected private var currencyUtils: CurrencyUtilsProtocol
     @Injected private var currencyRepository: CurrencyRepositoryProtocol
+
+    private var currency: Currency
 
     init(currency: Currency) {
         self.currency = currency
@@ -34,8 +35,7 @@ class CurrencyDetailsViewModel: ObservableObject {
                 viewData = currencyUtils.convertToDetailsViewData(currency)
                 currencyRepository.set(currency: currency)
             } catch {
-                print(error)
-                //            shouldShowAlert = true
+                showError = true
             }
             isLoading = false
         }
@@ -46,23 +46,35 @@ class CurrencyDetailsViewModel: ObservableObject {
 
 extension CurrencyDetailsViewModel {
 
-    var localizedPriceTitle: String {
+    var priceTitle: String {
         "Price"
     }
 
-    var localized24hrChangeTitle: String {
+    var last24hrChangeTitle: String {
         "Change (24hr)"
     }
 
-    var localizedMarketCapTitle: String {
+    var marketCapTitle: String {
         "Market Cap"
     }
 
-    var localized24hrVolumeTitle: String {
+    var last24hrVolumeTitle: String {
         "Volume (24hr)"
     }
 
-    var localizedSupplyTitle: String {
+    var supplyTitle: String {
         "Supply"
+    }
+
+    var errorAlertTitle: String {
+        .alertErrorTitle
+    }
+
+    var errorMessage: String {
+        .alertErrorGeneralMessage
+    }
+
+    var errorAlertOkButtonTitle: String {
+        .alertOkButtonTitle
     }
 }
