@@ -52,6 +52,7 @@
 		6236E5052A9A856200BC7604 /* NumberShortenerUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6236E5042A9A856200BC7604 /* NumberShortenerUseCaseTests.swift */; };
 		6236E5072A9A8AD300BC7604 /* PercentageFormatterUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6236E5062A9A8AD300BC7604 /* PercentageFormatterUseCaseTests.swift */; };
 		6236E5092A9A8D8900BC7604 /* CurrencyUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6236E5082A9A8D8800BC7604 /* CurrencyUtilsTests.swift */; };
+		6236E50B2A9A947300BC7604 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6236E50A2A9A947300BC7604 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		6236E5042A9A856200BC7604 /* NumberShortenerUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberShortenerUseCaseTests.swift; sourceTree = "<group>"; };
 		6236E5062A9A8AD300BC7604 /* PercentageFormatterUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageFormatterUseCaseTests.swift; sourceTree = "<group>"; };
 		6236E5082A9A8D8800BC7604 /* CurrencyUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyUtilsTests.swift; sourceTree = "<group>"; };
+		6236E50A2A9A947300BC7604 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 		6228C06E2A977618001BA163 = {
 			isa = PBXGroup;
 			children = (
+				6236E50A2A9A947300BC7604 /* README.md */,
 				6228C0792A977618001BA163 /* crypto */,
 				6228C08A2A97761B001BA163 /* cryptoTests */,
 				6228C0782A977618001BA163 /* Products */,
@@ -433,6 +436,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6236E50B2A9A947300BC7604 /* README.md in Resources */,
 				6228C0822A97761B001BA163 /* Preview Assets.xcassets in Resources */,
 				6236E5012A9A7FF300BC7604 /* Localizable.strings in Resources */,
 				6228C0B52A9786FC001BA163 /* Poppins-Bold.ttf in Resources */,
