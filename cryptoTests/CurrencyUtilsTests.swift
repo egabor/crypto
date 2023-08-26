@@ -41,8 +41,8 @@ final class CurrencyUtilsTests: XCTestCase {
         let input: Currency = .init(
             id: "id",
             rank: "1",
-            symbol: "BTC",
-            name: "Bitcoin",
+            symbol: "ETH",
+            name: "Ethereum",
             priceUsd: "26578.532",
             changePercent24Hr: "2.34842367347",
             marketCapUsd: "1234634536.34523522425",
@@ -51,14 +51,14 @@ final class CurrencyUtilsTests: XCTestCase {
         )
         let output: CurrencyDetailsViewData = .init(
             id: "id",
-            title: "BITCOIN",
+            title: "ETHEREUM",
             formattedPriceUsd: "$26.57K",
             formattedChangePercent24Hr: "2.35%",
             change: .positive,
             formattedMarketCap: "$1.23B",
             formatted24hrVolume: "$7.00K",
             formattedSupply: "1.00",
-            imageUrl: URL(string: "https://assets.coincap.io/assets/icons/btc@2x.png")
+            imageUrl: URL(string: "https://assets.coincap.io/assets/icons/eth@2x.png")
         )
 
         XCTAssertEqual(currencyUtils.convertToDetailsViewData(input), output)
