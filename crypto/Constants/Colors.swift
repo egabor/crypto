@@ -9,8 +9,8 @@ import SwiftUI
 
 extension Color {
     static let backgroundGradientBase = Color("BackgroundGradientBase")
-    static let backgroundGradientTop = Color("BackgroundGradientTop") // TODO: rename
-    static let backgroundGradientBottom = Color("BackgroundGradientBottom") // TODO: rename
+    static let backgroundGradientTop = Color("BackgroundGradientTop")
+    static let backgroundGradientBottom = Color("BackgroundGradientBottom")
     static let currencyListItemBackground = Color("CurrencyListItemBackground")
     static let contentText = Color("ContentText")
     static let contentRed = Color("ContentRed")

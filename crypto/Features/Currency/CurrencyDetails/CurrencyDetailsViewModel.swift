@@ -47,23 +47,23 @@ class CurrencyDetailsViewModel: ObservableObject {
 extension CurrencyDetailsViewModel {
 
     var priceTitle: String {
-        "Price"
+        .currencyDetailsScreenPriceTitle
     }
 
     var last24hrChangeTitle: String {
-        "Change (24hr)"
+        .currencyDetailsScreenLast24HrChangeTitle
     }
 
     var marketCapTitle: String {
-        "Market Cap"
+        .currencyDetailsScreenMarketCapTitle
     }
 
     var last24hrVolumeTitle: String {
-        "Volume (24hr)"
+        .currencyDetailsScreenLast24HrVolumeTitle
     }
 
     var supplyTitle: String {
-        "Supply"
+        .currencyDetailsScreenSupplyTitle
     }
 
     var errorAlertTitle: String {

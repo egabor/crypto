@@ -63,7 +63,7 @@ class CurrencyListViewModel: ObservableObject {
 extension CurrencyListViewModel {
 
     var title: String {
-        "COINS"
+        .currencyListScreenTitle
     }
 
     var errorAlertTitle: String {

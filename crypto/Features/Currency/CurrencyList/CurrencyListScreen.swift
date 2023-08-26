@@ -27,38 +27,37 @@ struct CurrencyListScreen: View {
     }
 
     var content: some View {
-        VStack(alignment: .leading) {
+        VStack {
             title
             list
         }
     }
-
+    
     // MARK: - LEVEL 1 Views: Main UI Elements
-
+    
     var title: some View {
-        Text(LocalizedStringKey(viewModel.title))
-            .headlineTextStyle()
+        HStack {
+            Text(LocalizedStringKey(viewModel.title))
+                .headlineTextStyle()
+            Spacer()
+        }
     }
-
+    
     @ViewBuilder
     var list: some View {
-        if viewModel.isLoading { // TODO: double check loading UI
+        if viewModel.isLoading {
             listLoadingIndicator
         } else {
             listContent
         }
     }
-
+    
     // MARK: - LEVEL 2 Views: Helpers & Other Subcomponents
-
+    
     var listLoadingIndicator: some View {
-        VStack { // TODO: revise
+        VStack {
             Spacer()
-            HStack {
-                Spacer()
-                ProgressView()
-                Spacer()
-            }
+            ProgressView()
             Spacer()
         }
     }

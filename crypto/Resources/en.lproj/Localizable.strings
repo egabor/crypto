@@ -6,6 +6,14 @@
   
 */
 
+"currencyListScreen.title" = "COINS";
+
+"currencyDetailsScreen.price.title" = "Price";
+"currencyDetailsScreen.last24HrChange.title" = "Change (24hr)";
+"currencyDetailsScreen.marketCap.title" = "Market Cap";
+"currencyDetailsScreen.last24HrVolume.title" = "Volume (24hr)";
+"currencyDetailsScreen.supply.title" = "Supply";
+
 "alert.error.title" = "Error";
 "alert.error.general.message" = "Something went wrong.";
 "alert.ok.button.title" = "Ok";
