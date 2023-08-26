@@ -14,7 +14,6 @@ extension Resolver: ResolverRegistering {
 
         registerCurrencyDependencies()
         registerNetworkDependencies()
-        registerAsyncImageViewDependencies()
 
         register { NumberShortenerUtils() }
             .scope(.application)
