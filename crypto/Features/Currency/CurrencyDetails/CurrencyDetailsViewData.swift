@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CurrencyDetailsViewData {
+struct CurrencyDetailsViewData: Equatable {
     let id: String
     let title: String
     let formattedPriceUsd: String

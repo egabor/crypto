@@ -26,7 +26,7 @@ final class NumberShortenerUseCaseTests: XCTestCase {
         ]
 
         for set in dataSet {
-            XCTAssertEqual(numberShortener(set.input), set.output)
+            XCTAssertEqual(numberShortener(set.input, formatAsCurrency: true), set.output)
         }
     }
 
@@ -46,7 +46,7 @@ final class NumberShortenerUseCaseTests: XCTestCase {
         ]
 
         for set in dataSet {
-            XCTAssertEqual(numberShortener(set.input), set.output)
+            XCTAssertEqual(numberShortener(set.input, formatAsCurrency: true), set.output)
         }
     }
 
@@ -66,7 +66,7 @@ final class NumberShortenerUseCaseTests: XCTestCase {
         ]
 
         for set in dataSet {
-            XCTAssertEqual(numberShortener(set.input), set.output)
+            XCTAssertEqual(numberShortener(set.input, formatAsCurrency: true), set.output)
         }
     }
 
@@ -79,7 +79,17 @@ final class NumberShortenerUseCaseTests: XCTestCase {
         ]
 
         for set in dataSet {
-            XCTAssertEqual(numberShortener(set.input), set.output)
+            XCTAssertEqual(numberShortener(set.input, formatAsCurrency: true), set.output)
+        }
+    }
+
+    func testNumberShortenerUseCase_forValidInputs_under1K_whenFormattingAsNumber_shouldReturnValidOutputs() throws {
+        let dataSet: [(input: String, output: String)] = [
+            (input: "1", output: "1.00"),
+        ]
+
+        for set in dataSet {
+            XCTAssertEqual(numberShortener(set.input, formatAsCurrency: false), set.output)
         }
     }
 
@@ -90,7 +100,7 @@ final class NumberShortenerUseCaseTests: XCTestCase {
         ]
 
         for set in dataSet {
-            XCTAssertEqual(numberShortener(set.input), set.output)
+            XCTAssertEqual(numberShortener(set.input, formatAsCurrency: true), set.output)
         }
     }
 }

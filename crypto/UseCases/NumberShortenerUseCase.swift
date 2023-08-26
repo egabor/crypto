@@ -9,7 +9,7 @@ import Foundation
 
 protocol NumberShortenerUseCaseProtocol {
     
-    func callAsFunction(_ numberString: String) -> String
+    func callAsFunction(_ numberString: String, formatAsCurrency: Bool) -> String
 }
 
 class NumberShortenerUseCase: NumberShortenerUseCaseProtocol {
@@ -46,7 +46,14 @@ class NumberShortenerUseCase: NumberShortenerUseCaseProtocol {
         return formattedString
     }
 
-    func callAsFunction(_ numberString: String) -> String {
+    func callAsFunction(_ numberString: String, formatAsCurrency: Bool) -> String {
+        if formatAsCurrency {
+            numberFormatter.numberStyle = .currency
+            numberFormatter.currencyCode = currencyCode
+        } else {
+            numberFormatter.numberStyle = .none
+            numberFormatter.currencyCode = nil
+        }
         let formattedNumber = preFormat(numberString: numberString)
         var slices = formattedNumber.components(separatedBy: " ")
         let head = slices.removeFirst()

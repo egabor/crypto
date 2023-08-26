@@ -18,7 +18,7 @@ class CurrencyUtils: CurrencyUtilsProtocol {
             id: currency.id,
             symbol: currency.symbol,
             name: currency.name.uppercased(),
-            formattedPriceUsd: numberShortener(currency.priceUsd),
+            formattedPriceUsd: numberShortener(currency.priceUsd, formatAsCurrency: true),
             formattedChangePercent24Hr: percentageFormatter(currency.changePercent24Hr),
             change: getChangeType(for: currency.changePercent24Hr),
             imageUrl: imageUrl(for: currency)
@@ -29,12 +29,12 @@ class CurrencyUtils: CurrencyUtilsProtocol {
         .init(
             id: currency.id,
             title: currency.name.uppercased(),
-            formattedPriceUsd: numberShortener(currency.priceUsd),
+            formattedPriceUsd: numberShortener(currency.priceUsd, formatAsCurrency: true),
             formattedChangePercent24Hr: percentageFormatter(currency.changePercent24Hr),
             change: getChangeType(for: currency.changePercent24Hr),
-            formattedMarketCap: numberShortener(currency.marketCapUsd),
-            formatted24hrVolume: numberShortener(currency.volumeUsd24Hr),
-            formattedSupply: numberShortener(currency.supply),
+            formattedMarketCap: numberShortener(currency.marketCapUsd, formatAsCurrency: true),
+            formatted24hrVolume: numberShortener(currency.volumeUsd24Hr, formatAsCurrency: true),
+            formattedSupply: numberShortener(currency.supply, formatAsCurrency: false),
             imageUrl: imageUrl(for: currency)
         )
     }
