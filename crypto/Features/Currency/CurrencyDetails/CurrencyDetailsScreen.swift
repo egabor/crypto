@@ -51,27 +51,27 @@ struct CurrencyDetailsScreen: View {
 
     var currencyInfoView: some View {
         VStack(spacing: configuration.rowSpacing) {
-            detailRow(
+            DetailRow(
                 title: viewModel.localizedPriceTitle,
                 value: viewModel.viewData.formattedPriceUsd
             )
-            detailRow(
+            DetailRow(
                 title: viewModel.localized24hrChangeTitle,
                 value: viewModel.viewData.formattedChangePercent24Hr,
-                valueColor: changeColor(for: viewModel.viewData.change)
+                valueCustomColor: viewModel.viewData.change.color
             )
 
             contentDivider
 
-            detailRow(
+            DetailRow(
                 title: viewModel.localizedMarketCapTitle,
                 value: viewModel.viewData.formattedMarketCap
             )
-            detailRow(
+            DetailRow(
                 title: viewModel.localized24hrVolumeTitle,
                 value: viewModel.viewData.formatted24hrVolume
             )
-            detailRow(
+            DetailRow(
                 title: viewModel.localizedSupplyTitle,
                 value: viewModel.viewData.formattedSupply
             )
@@ -124,35 +124,11 @@ struct CurrencyDetailsScreen: View {
         }
     }
 
-    func detailRow(
-        title: String,
-        value: String,
-        valueColor: Color = .contentText
-    ) -> some View {
-        HStack {
-            Text(title)
-                .bodyTextStyle()
-            Spacer()
-            Text(value)
-                .foregroundColor(valueColor)
-                .bodyBoldTextStyle()
-        }
-    }
-
     var contentDivider: some View {
         Divider()
             .frame(height: configuration.dividerHeight)
             .overlay(Color.divider)
             .padding(.vertical)
-    }
-
-    // TODO: eliminate Code duplication
-    private func changeColor(for changeType: CurrencyChangeType) -> Color {
-        switch changeType {
-            case .none: return .contentText
-            case .positive: return .contentGreen
-            case .negative: return .contentRed
-        }
     }
 }
 

@@ -52,14 +52,11 @@ struct CurrencyListItem: View {
                 Spacer()
                 currencyPrice(viewData.formattedPriceUsd)
             }
-            HStack {
-                currencySymbol(viewData.symbol)
-                Spacer()
-                currency24HrChange(
-                    viewData.formattedChangePercent24Hr,
-                    change: viewData.change
-                )
-            }
+            DetailRow(
+                title: viewData.symbol,
+                value: viewData.formattedChangePercent24Hr,
+                valueCustomColor: viewData.change.color
+            )
             arrowImage
         }
     }
@@ -76,28 +73,8 @@ struct CurrencyListItem: View {
             .bodyBoldTextStyle()
     }
 
-    func currencySymbol(_ symbol: String) -> some View {
-        Text(symbol)
-            .bodyTextStyle()
-    }
-
-    func currency24HrChange(_ changePercent: String, change: CurrencyChangeType) -> some View {
-        Text(changePercent)
-            .foregroundColor(changeColor(for: change))
-            .bodyBoldTextStyle()
-    }
-
     var arrowImage: some View {
         Image.arrowRight
-    }
-
-    // TODO: eliminate Code duplication
-    private func changeColor(for changeType: CurrencyChangeType) -> Color {
-        switch changeType {
-            case .none: return .contentText
-            case .positive: return .contentGreen
-            case .negative: return .contentRed
-        }
     }
 }
 
