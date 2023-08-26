@@ -8,12 +8,6 @@
 import Foundation
 import Resolver
 
-protocol CurrencyUtilsProtocol {
-
-    func convertToListItemViewData(_ currency: Currency) -> CurrencyListItemViewData
-    func convertToDetailsViewData(_ currency: Currency) -> CurrencyDetailsViewData
-}
-
 class CurrencyUtils: CurrencyUtilsProtocol {
 
     @Injected private var numberShortener: NumberShortenerUtils

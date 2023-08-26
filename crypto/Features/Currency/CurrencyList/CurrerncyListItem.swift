@@ -28,20 +28,18 @@ struct CurrencyListItem: View {
             alignment: .top,
             spacing: configuration.innerSpacing
         ) {
-            imageView(for: viewData.imageUrl)
+            imageView
             currencyInfoView
         }
     }
 
     // MARK: - LEVEL 1 Views: Main UI Elements
 
-    @ViewBuilder
-    func imageView(for url: URL?) -> some View {
-        if let url = url {
-            asyncImageView(url: url)
-        } else {
-            imageViewPlaceholder
-        }
+    var imageView: some View {
+        AsyncImageView(
+            url: viewData.imageUrl,
+            configuration: .init(iconSize: configuration.iconSize)
+        )
     }
 
     var currencyInfoView: some View {
@@ -67,58 +65,6 @@ struct CurrencyListItem: View {
     }
 
     // MARK: - LEVEL 2 Views: Helpers & Other Subcomponents
-
-    func asyncImageView(url: URL) -> some View {
-        AsyncImage(url: url) { phase in
-            if let image = phase.image {
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-            } else if phase.error != nil {
-                imageViewPlaceholder
-            } else {
-                imageLoadingPlaceholder
-            }
-        }
-        .frame(
-            width: configuration.iconSize.width,
-            height: configuration.iconSize.height,
-            alignment: .center
-        )
-//        AsyncImageView(
-//            url: url,
-//            placeholder: imageLoadingPlaceholder,
-//            image: image
-//        )
-    }
-
-    var imageLoadingPlaceholder: some View {
-        ProgressView()
-            .frame(
-                width: configuration.iconSize.width,
-                height: configuration.iconSize.height
-            )
-            .tint(Color.progressViewTint)
-    }
-
-    var imageViewPlaceholder: some View {
-        Circle()
-            .frame(
-                width: configuration.iconSize.width,
-                height: configuration.iconSize.height
-            )
-            .foregroundColor(Color.black.opacity(0.1))
-    }
-
-//    func image(_ image: UIImage) -> some View {
-//        Image(uiImage: image)
-//            .resizable()
-//            .aspectRatio(contentMode: .fit)
-//            .frame(
-//                width: configuration.iconSize.width,
-//                height: configuration.iconSize.height
-//            )
-//    }
 
     func currencyName(_ name: String) -> some View {
         Text(name)

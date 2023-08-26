@@ -36,7 +36,7 @@ struct CurrencyListScreen: View {
 
     @ViewBuilder
     var list: some View {
-        if viewModel.isLoading {
+        if viewModel.isLoading { // TODO: double check loading UI
             listLoadingIndicator
         } else {
             listContent

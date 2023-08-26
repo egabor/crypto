@@ -8,17 +8,6 @@
 import Foundation
 import Combine
 
-/// The currency repository stands for the single source of truth in the app regarding the currencies.
-protocol CurrencyRepositoryProtocol {
-
-    var dataSetUpdate: PassthroughSubject<Void, Never> { get set }
-    var currencies: [String: Currency] { get }
-
-    func set(currency: Currency)
-    func set(currencies: [Currency])
-    func get() -> [Currency]
-}
-
 class CurrencyRepository: CurrencyRepositoryProtocol {
 
     var dataSetUpdate: PassthroughSubject<Void, Never> = .init()

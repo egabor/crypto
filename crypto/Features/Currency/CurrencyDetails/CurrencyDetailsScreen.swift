@@ -44,7 +44,7 @@ struct CurrencyDetailsScreen: View {
             backButton
             title
             Spacer()
-            imageView(for: viewModel.viewData.imageUrl)
+            imageView
                 .padding(.trailing)
         }
     }
@@ -77,7 +77,7 @@ struct CurrencyDetailsScreen: View {
             )
             Spacer()
         }
-        .padding(24)
+        .padding(configuration.infoViewPadding)
         .background(
             Color.currencyListItemBackground
                 .cornerRadius(configuration.cornerRadius)
@@ -104,50 +104,11 @@ struct CurrencyDetailsScreen: View {
             .headlineTextStyle()
     }
 
-    @ViewBuilder
-    func imageView(for url: URL?) -> some View {
-        if let url = url {
-            asyncImageView(url: url)
-        } else {
-            imageViewPlaceholder
-        }
-    }
-
-    func asyncImageView(url: URL) -> some View {
-        AsyncImage(url: url) { phase in
-            if let image = phase.image {
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-            } else if phase.error != nil {
-                imageViewPlaceholder
-            } else {
-                imageLoadingPlaceholder
-            }
-        }
-        .frame(
-            width: configuration.iconSize.width,
-            height: configuration.iconSize.height,
-            alignment: .center
+    var imageView: some View {
+        AsyncImageView(
+            url: viewModel.viewData.imageUrl,
+            configuration: .init(iconSize: configuration.iconSize)
         )
-    }
-
-    var imageLoadingPlaceholder: some View {
-        ProgressView()
-            .frame(
-                width: configuration.iconSize.width,
-                height: configuration.iconSize.height
-            )
-            .tint(Color.progressViewTint)
-    }
-
-    var imageViewPlaceholder: some View {
-        Circle()
-            .frame(
-                width: configuration.iconSize.width,
-                height: configuration.iconSize.height
-            )
-            .foregroundColor(Color.black.opacity(0.1))
     }
 
     @ViewBuilder
@@ -201,17 +162,20 @@ extension CurrencyDetailsScreen {
         let rowSpacing: Double
         let cornerRadius: Double
         let dividerHeight: Double
+        let infoViewPadding: Double
 
         init(
             iconSize: CGSize = .init(width: 40.0, height: 40.0),
             rowSpacing: Double = 16.0,
             cornerRadius: Double = 16.0,
-            dividerHeight: Double = 1.0
+            dividerHeight: Double = 1.0,
+            infoViewPadding: Double = 24.0
         ) {
             self.iconSize = iconSize
             self.rowSpacing = rowSpacing
             self.cornerRadius = cornerRadius
             self.dividerHeight = dividerHeight
+            self.infoViewPadding = infoViewPadding
         }
     }
 }
