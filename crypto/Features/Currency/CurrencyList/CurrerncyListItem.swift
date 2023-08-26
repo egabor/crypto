@@ -55,7 +55,7 @@ struct CurrencyListItem: View {
             DetailRow(
                 title: viewData.symbol,
                 value: viewData.formattedChangePercent24Hr,
-                valueCustomColor: viewData.change.color
+                valueCustomColor: color(for: viewData.change)
             )
             arrowImage
         }
@@ -75,6 +75,10 @@ struct CurrencyListItem: View {
 
     var arrowImage: some View {
         Image.arrowRight
+    }
+
+    func color(for change: CurrencyChangeType) -> Color {
+        change.color
     }
 }
 

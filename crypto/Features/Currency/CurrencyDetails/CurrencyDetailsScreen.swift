@@ -11,6 +11,9 @@ struct CurrencyDetailsScreen: View {
 
     @StateObject private var viewModel: CurrencyDetailsViewModel
     var configuration: Configuration
+    var viewData: CurrencyDetailsViewData {
+        viewModel.viewData
+    }
 
     @Environment(\.dismiss) var dismiss
 
@@ -53,27 +56,27 @@ struct CurrencyDetailsScreen: View {
         VStack(spacing: configuration.rowSpacing) {
             DetailRow(
                 title: viewModel.localizedPriceTitle,
-                value: viewModel.viewData.formattedPriceUsd
+                value: viewData.formattedPriceUsd
             )
             DetailRow(
                 title: viewModel.localized24hrChangeTitle,
-                value: viewModel.viewData.formattedChangePercent24Hr,
-                valueCustomColor: viewModel.viewData.change.color
+                value: viewData.formattedChangePercent24Hr,
+                valueCustomColor: color(for: viewData.change)
             )
 
             contentDivider
 
             DetailRow(
                 title: viewModel.localizedMarketCapTitle,
-                value: viewModel.viewData.formattedMarketCap
+                value: viewData.formattedMarketCap
             )
             DetailRow(
                 title: viewModel.localized24hrVolumeTitle,
-                value: viewModel.viewData.formatted24hrVolume
+                value: viewData.formatted24hrVolume
             )
             DetailRow(
                 title: viewModel.localizedSupplyTitle,
-                value: viewModel.viewData.formattedSupply
+                value: viewData.formattedSupply
             )
             Spacer()
         }
@@ -100,13 +103,13 @@ struct CurrencyDetailsScreen: View {
     }
 
     var title: some View {
-        Text(viewModel.viewData.title)
+        Text(viewData.title)
             .headlineTextStyle()
     }
 
     var imageView: some View {
         AsyncImageView(
-            url: viewModel.viewData.imageUrl,
+            url: viewData.imageUrl,
             configuration: .init(iconSize: configuration.iconSize)
         )
     }
@@ -129,6 +132,10 @@ struct CurrencyDetailsScreen: View {
             .frame(height: configuration.dividerHeight)
             .overlay(Color.divider)
             .padding(.vertical)
+    }
+
+    func color(for change: CurrencyChangeType) -> Color {
+        change.color
     }
 }
 
