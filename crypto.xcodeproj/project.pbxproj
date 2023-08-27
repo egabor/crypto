@@ -57,6 +57,12 @@
 		6236E5102A9B721800BC7604 /* Currency+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6236E50F2A9B721800BC7604 /* Currency+Mock.swift */; };
 		6236E5122A9B723900BC7604 /* currencies.json in Resources */ = {isa = PBXBuildFile; fileRef = 6236E5112A9B723900BC7604 /* currencies.json */; };
 		6236E5142A9B755E00BC7604 /* MockDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6236E5132A9B755E00BC7604 /* MockDataProvider.swift */; };
+		6236E5162A9B77EB00BC7604 /* MockAssetsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6236E5152A9B77EB00BC7604 /* MockAssetsApi.swift */; };
+		6236E5182A9B781F00BC7604 /* MockAssetsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6236E5172A9B781F00BC7604 /* MockAssetsResult.swift */; };
+		6236E51A2A9B785700BC7604 /* assets_200_validResults.json in Resources */ = {isa = PBXBuildFile; fileRef = 6236E5192A9B785700BC7604 /* assets_200_validResults.json */; };
+		6236E51C2A9B796800BC7604 /* MockError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6236E51B2A9B796800BC7604 /* MockError.swift */; };
+		6236E51E2A9B7A1000BC7604 /* asset_200_validResult.json in Sources */ = {isa = PBXBuildFile; fileRef = 6236E51D2A9B7A1000BC7604 /* asset_200_validResult.json */; };
+		6236E5202A9B7A9C00BC7604 /* MockAssetResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6236E51F2A9B7A9C00BC7604 /* MockAssetResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +128,12 @@
 		6236E50F2A9B721800BC7604 /* Currency+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+Mock.swift"; sourceTree = "<group>"; };
 		6236E5112A9B723900BC7604 /* currencies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = currencies.json; sourceTree = "<group>"; };
 		6236E5132A9B755E00BC7604 /* MockDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataProvider.swift; sourceTree = "<group>"; };
+		6236E5152A9B77EB00BC7604 /* MockAssetsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAssetsApi.swift; sourceTree = "<group>"; };
+		6236E5172A9B781F00BC7604 /* MockAssetsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAssetsResult.swift; sourceTree = "<group>"; };
+		6236E5192A9B785700BC7604 /* assets_200_validResults.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = assets_200_validResults.json; sourceTree = "<group>"; };
+		6236E51B2A9B796800BC7604 /* MockError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockError.swift; sourceTree = "<group>"; };
+		6236E51D2A9B7A1000BC7604 /* asset_200_validResult.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = asset_200_validResult.json; sourceTree = "<group>"; };
+		6236E51F2A9B7A9C00BC7604 /* MockAssetResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAssetResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -364,7 +376,13 @@
 			children = (
 				6236E5132A9B755E00BC7604 /* MockDataProvider.swift */,
 				6236E50F2A9B721800BC7604 /* Currency+Mock.swift */,
+				6236E51B2A9B796800BC7604 /* MockError.swift */,
+				6236E5152A9B77EB00BC7604 /* MockAssetsApi.swift */,
+				6236E5172A9B781F00BC7604 /* MockAssetsResult.swift */,
+				6236E51F2A9B7A9C00BC7604 /* MockAssetResult.swift */,
 				6236E5112A9B723900BC7604 /* currencies.json */,
+				6236E51D2A9B7A1000BC7604 /* asset_200_validResult.json */,
+				6236E5192A9B785700BC7604 /* assets_200_validResults.json */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -470,6 +488,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6236E5122A9B723900BC7604 /* currencies.json in Resources */,
+				6236E51A2A9B785700BC7604 /* assets_200_validResults.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,11 +543,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				6236E5072A9A8AD300BC7604 /* PercentageFormatterUseCaseTests.swift in Sources */,
+				6236E5182A9B781F00BC7604 /* MockAssetsResult.swift in Sources */,
+				6236E5162A9B77EB00BC7604 /* MockAssetsApi.swift in Sources */,
 				6236E50D2A9B6E1E00BC7604 /* CurrencyRepositoryTests.swift in Sources */,
 				6236E5102A9B721800BC7604 /* Currency+Mock.swift in Sources */,
 				6236E5052A9A856200BC7604 /* NumberShortenerUseCaseTests.swift in Sources */,
 				6236E5142A9B755E00BC7604 /* MockDataProvider.swift in Sources */,
+				6236E51E2A9B7A1000BC7604 /* asset_200_validResult.json in Sources */,
+				6236E51C2A9B796800BC7604 /* MockError.swift in Sources */,
 				6236E5092A9A8D8900BC7604 /* CurrencyUtilsTests.swift in Sources */,
+				6236E5202A9B7A9C00BC7604 /* MockAssetResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
