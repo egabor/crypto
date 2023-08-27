@@ -12,7 +12,7 @@
 
 ## Architecture
 
-MVVM architecture is used in the project along with SwiftUI and Combine. For shared/reusable business logic use cases were used.
+MVVM architecture is used in the project along with SwiftUI, Combine and Concurrency. For shared/reusable business logic use cases were used.
 
 ## Used libraries
 
