@@ -20,6 +20,5 @@ MVVM architecture is used in the project along with SwiftUI and Combine. For sha
 
 ## TODOs
 
-- [ ] Cover `CurrencyRepository` with unit tests.
 - [ ] Cover `CurrencyListViewModel` with unit tests.
 - [ ] Cover `CurrencyDetailsViewModel` with unit tests.

@@ -21,7 +21,7 @@ class CurrencyRepository: CurrencyRepositoryProtocol {
 
     func set(currencies: [Currency]) {
         for currency in currencies {
-            set(currency: currency)
+            self.currencies[currency.id] = currency
         }
         dataSetUpdate.send(())
     }
