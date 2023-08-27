@@ -12,7 +12,7 @@ final class CurrencyUtilsTests: XCTestCase {
 
     let currencyUtils = CurrencyUtils()
 
-    func testCurrencyUtils_methodConvertToListItemViewData_forValidInput_shouldReturnValidOutput() throws {
+    func test_currencyUtils_methodConvertToListItemViewData_forValidInput_shouldReturnValidOutput() throws {
         let input: Currency = .init(
             id: "id",
             rank: "1",
@@ -37,7 +37,7 @@ final class CurrencyUtilsTests: XCTestCase {
         XCTAssertEqual(currencyUtils.convertToListItemViewData(input), output)
     }
 
-    func testCurrencyUtils_methodConvertToDetailsViewData_forValidInput_shouldReturnValidOutput() throws {
+    func test_currencyUtils_methodConvertToDetailsViewData_forValidInput_shouldReturnValidOutput() throws {
         let input: Currency = .init(
             id: "id",
             rank: "1",

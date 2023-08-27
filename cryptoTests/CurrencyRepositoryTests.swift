@@ -6,44 +6,55 @@
 //
 
 import XCTest
+import Combine
 @testable import crypto
 
 final class CurrencyRepositoryTests: XCTestCase {
 
-    func testCurrencyRepository_whenSettingListOfCurrencies_shouldReceiveDataSetUpdate() throws {
+    private var subscriptions: Set<AnyCancellable>!
+
+    override func setUpWithError() throws {
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+
+        subscriptions = []
+    }
+
+    func test_currencyRepository_whenSettingListOfCurrencies_shouldReceiveDataSetUpdate() throws {
         let mockCurrencies = try [Currency].mockData()
         let currencyRepository = CurrencyRepository()
-        let dataSetUpdateExpectation = self.expectation(description: "Data set update.")
+        let expectation = self.expectation(description: "Data set update.")
 
-        let cancellable = currencyRepository
+        currencyRepository
             .dataSetUpdate
             .receive(on: RunLoop.main)
             .sink { _ in
-                dataSetUpdateExpectation.fulfill()
+                expectation.fulfill()
             }
+            .store(in: &subscriptions)
 
         currencyRepository.set(currencies: mockCurrencies)
 
-        wait(for: [dataSetUpdateExpectation], timeout: 10)
+        wait(for: [expectation], timeout: 10)
 
         XCTAssertEqual(currencyRepository.get(), Array(mockCurrencies.prefix(upTo: Configuration.currencyLimit)))
     }
 
-    func testCurrencyRepository_whenSettingCurrency_shouldReceiveDataSetUpdate() throws {
+    func test_currencyRepository_whenSettingCurrency_shouldReceiveDataSetUpdate() throws {
         let mockCurrency = try Currency.mockData()
         let currencyRepository = CurrencyRepository()
-        let dataSetUpdateExpectation = self.expectation(description: "Data set update.")
+        let expectation = self.expectation(description: "Data set update.")
 
-        let cancellable = currencyRepository
+        currencyRepository
             .dataSetUpdate
             .receive(on: RunLoop.main)
             .sink { _ in
-                dataSetUpdateExpectation.fulfill()
+                expectation.fulfill()
             }
+            .store(in: &subscriptions)
 
         currencyRepository.set(currency: mockCurrency)
 
-        wait(for: [dataSetUpdateExpectation], timeout: 10)
+        wait(for: [expectation], timeout: 10)
 
         XCTAssertEqual(currencyRepository.get(), [mockCurrency])
     }

@@ -12,7 +12,7 @@ final class NumberShortenerUseCaseTests: XCTestCase {
 
     let numberShortener = NumberShortenerUseCase()
 
-    func testNumberShortenerUseCase_forValidInputs_under1K_shouldReturnValidOutputs() throws {
+    func test_numberShortenerUseCase_forValidInputs_under1K_shouldReturnValidOutputs() throws {
         let dataSet: [(input: String, output: String)] = [
             (input: "1",       output: "$1.00"),
             (input: "1.0",     output: "$1.00"),
@@ -30,7 +30,7 @@ final class NumberShortenerUseCaseTests: XCTestCase {
         }
     }
 
-    func testNumberShortenerUseCase_forValidInputs_under1M_shouldReturnValidOutputs() throws {
+    func test_numberShortenerUseCase_forValidInputs_under1M_shouldReturnValidOutputs() throws {
         let dataSet: [(input: String, output: String)] = [
             (input: "1000",       output: "$1.00K"),
             (input: "1000.0",     output: "$1.00K"),
@@ -50,7 +50,7 @@ final class NumberShortenerUseCaseTests: XCTestCase {
         }
     }
 
-    func testNumberShortenerUseCase_forValidInputs_under1B_shouldReturnValidOutputs() throws {
+    func test_numberShortenerUseCase_forValidInputs_under1B_shouldReturnValidOutputs() throws {
         let dataSet: [(input: String, output: String)] = [
             (input: "1000000",       output: "$1.00M"),
             (input: "1000000.0",     output: "$1.00M"),
@@ -70,7 +70,7 @@ final class NumberShortenerUseCaseTests: XCTestCase {
         }
     }
 
-    func testNumberShortenerUseCase_forValidInputs_over1B_shouldReturnValidOutputs() throws {
+    func test_numberShortenerUseCase_forValidInputs_over1B_shouldReturnValidOutputs() throws {
         let dataSet: [(input: String, output: String)] = [
             (input: "1000000000.00",    output: "$1.00B"),
             (input: "10000000000.00",   output: "$10.00B"),
@@ -83,7 +83,7 @@ final class NumberShortenerUseCaseTests: XCTestCase {
         }
     }
 
-    func testNumberShortenerUseCase_forValidInputs_under1K_whenFormattingAsNumber_shouldReturnValidOutputs() throws {
+    func test_numberShortenerUseCase_forValidInputs_under1K_whenFormattingAsNumber_shouldReturnValidOutputs() throws {
         let dataSet: [(input: String, output: String)] = [
             (input: "1", output: "1.00"),
         ]
@@ -93,7 +93,7 @@ final class NumberShortenerUseCaseTests: XCTestCase {
         }
     }
 
-    func testNumberShortenerUseCase_forInvalidInputs_shouldReturnOriginalInput() throws {
+    func test_numberShortenerUseCase_forInvalidInputs_shouldReturnOriginalInput() throws {
         let dataSet: [(input: String, output: String)] = [
             (input: "1000000000,00",    output: "1000000000,00"),
             (input: "1,000,000,000.00", output: "1,000,000,000.00")

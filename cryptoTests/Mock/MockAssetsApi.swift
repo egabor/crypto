@@ -18,6 +18,7 @@ class MockAssetsApi: AssetsApiProtocol {
         guard let fileName = self.mockAssetsResult?.rawValue else {
             throw MockError.resultNotSpecified
         }
+        try await Task.sleep(nanoseconds: 100_000_000) // 0.1 sec
         return try MockDataProvider().assetsResponse(fileName: fileName)
     }
 
@@ -25,6 +26,7 @@ class MockAssetsApi: AssetsApiProtocol {
         guard let fileName = self.mockAssetResult?.rawValue else {
             throw MockError.resultNotSpecified
         }
+        try await Task.sleep(nanoseconds: 100_000_000) // 0.1 sec
         return try MockDataProvider().assetResponse(fileName: fileName)
     }
 }

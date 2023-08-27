@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import Resolver
 
-class CurrencyListViewModel: ObservableObject {
+final class CurrencyListViewModel: ObservableObject {
 
     @Published var currencyListItems: [CurrencyListItemViewData] = []
     @Published var isLoading: Bool = false

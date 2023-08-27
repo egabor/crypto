@@ -68,5 +68,210 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "42837CA7-6E88-4B86-84B8-B9FC222054E8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "cryptoTests/Mock/MockDataProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "assetResponse(fileName:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "42837CA7-6E88-4B86-84B8-B9FC222054E8 - b5cb1a81a77f7160"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "cryptoTests.MockDataProvider.assetResponse(fileName: Swift.String) throws -&gt; crypto.DataWrapper&lt;crypto.Currency&gt;"
+                  moduleName = "cryptoTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eszenyigabor/Documents/Projects/InterviewTasks/Aldi/crypto/cryptoTests/Mock/MockDataProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "1344">
+               </Location>
+               <Location
+                  uuid = "42837CA7-6E88-4B86-84B8-B9FC222054E8 - b5cb1a81a77f7160"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "cryptoTests.MockDataProvider.assetResponse(fileName: Swift.String) throws -&gt; crypto.DataWrapper&lt;crypto.Currency&gt;"
+                  moduleName = "cryptoTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eszenyigabor/Documents/Projects/InterviewTasks/Aldi/crypto/cryptoTests/Mock/MockDataProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "1665">
+               </Location>
+               <Location
+                  uuid = "42837CA7-6E88-4B86-84B8-B9FC222054E8 - b5cb1a81a77f7160"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "cryptoTests.MockDataProvider.assetResponse(fileName: Swift.String) throws -&gt; crypto.DataWrapper&lt;crypto.Currency&gt;"
+                  moduleName = "cryptoTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eszenyigabor/Documents/Projects/InterviewTasks/Aldi/crypto/cryptoTests/Mock/MockDataProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "1419">
+               </Location>
+               <Location
+                  uuid = "42837CA7-6E88-4B86-84B8-B9FC222054E8 - b5cb1a81a77f7160"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "cryptoTests.MockDataProvider.assetResponse(fileName: Swift.String) throws -&gt; crypto.DataWrapper&lt;crypto.Currency&gt;"
+                  moduleName = "cryptoTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eszenyigabor/Documents/Projects/InterviewTasks/Aldi/crypto/cryptoTests/Mock/MockDataProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "1740">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE7FD0BB-EB33-470A-888A-AB5B7A56B4E5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "crypto/Network/Assets/AssetsApi.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "fetchCurrency(by:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BE7FD0BB-EB33-470A-888A-AB5B7A56B4E5 - 883bf56892ae488"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for crypto.AssetsApi.fetchCurrency(by: Swift.String) async throws -&gt; crypto.DataWrapper&lt;crypto.Currency&gt;"
+                  moduleName = "crypto"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eszenyigabor/Documents/Projects/InterviewTasks/Aldi/crypto/crypto/Network/Assets/AssetsApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "221">
+               </Location>
+               <Location
+                  uuid = "BE7FD0BB-EB33-470A-888A-AB5B7A56B4E5 - 883bf56892ae488"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for crypto.AssetsApi.fetchCurrency(by: Swift.String) async throws -&gt; crypto.DataWrapper&lt;crypto.Currency&gt;"
+                  moduleName = "crypto"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eszenyigabor/Documents/Projects/InterviewTasks/Aldi/crypto/crypto/Network/Assets/AssetsApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "408">
+               </Location>
+               <Location
+                  uuid = "BE7FD0BB-EB33-470A-888A-AB5B7A56B4E5 - 883bf56892ae488"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for crypto.AssetsApi.fetchCurrency(by: Swift.String) async throws -&gt; crypto.DataWrapper&lt;crypto.Currency&gt;"
+                  moduleName = "crypto"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eszenyigabor/Documents/Projects/InterviewTasks/Aldi/crypto/crypto/Network/Assets/AssetsApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "886">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0B7DCDE4-3397-4614-995B-89961434F0CD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "cryptoTests/Mock/MockDataProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "assetResponse(fileName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E84F17C4-902F-474C-B9C0-C739F286418A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "cryptoTests/Mock/MockDataProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "assetResponse(fileName:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E84F17C4-902F-474C-B9C0-C739F286418A - b5cb1a81a77f72be"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "cryptoTests.MockDataProvider.assetResponse(fileName: Swift.String) throws -&gt; crypto.DataWrapper&lt;crypto.Currency&gt;"
+                  moduleName = "cryptoTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eszenyigabor/Documents/Projects/InterviewTasks/Aldi/crypto/cryptoTests/Mock/MockDataProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "1884">
+               </Location>
+               <Location
+                  uuid = "E84F17C4-902F-474C-B9C0-C739F286418A - b5cb1a81a77f72be"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "cryptoTests.MockDataProvider.assetResponse(fileName: Swift.String) throws -&gt; crypto.DataWrapper&lt;crypto.Currency&gt;"
+                  moduleName = "cryptoTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eszenyigabor/Documents/Projects/InterviewTasks/Aldi/crypto/cryptoTests/Mock/MockDataProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "1809">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

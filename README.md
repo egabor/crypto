@@ -17,8 +17,4 @@ MVVM architecture is used in the project along with SwiftUI and Combine. For sha
 ## Used libraries
 
 - [Resolver](https://github.com/hmlongco/Resolver)
-
-## TODOs
-
-- [ ] Cover `CurrencyListViewModel` with unit tests.
-- [ ] Cover `CurrencyDetailsViewModel` with unit tests.
+(Probably I lose a bonus point for using this library. But the usage may be reasonable as no need to pass dependencies in the initializers. It's also helpful in testing when mocking the API.)

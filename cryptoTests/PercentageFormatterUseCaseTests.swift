@@ -12,7 +12,7 @@ final class PercentageFormatterUseCaseTests: XCTestCase {
 
     let percentageFormatter = PercentageFormatterUseCase()
 
-    func testPercentageFormatter_forValidInputs_shouldReturnValidOutputs() throws {
+    func test_percentageFormatter_forValidInputs_shouldReturnValidOutputs() throws {
         let dataSet: [(input: String, output: String)] = [
             (input: "0.01",  output: "0.01%"),
             (input: "0.015", output: "0.02%"),

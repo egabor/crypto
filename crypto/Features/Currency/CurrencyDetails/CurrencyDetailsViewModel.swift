@@ -8,7 +8,7 @@
 import Foundation
 import Resolver
 
-class CurrencyDetailsViewModel: ObservableObject {
+final class CurrencyDetailsViewModel: ObservableObject {
 
     @Published var viewData: CurrencyDetailsViewData = .empty
     @Published var isLoading: Bool = false
